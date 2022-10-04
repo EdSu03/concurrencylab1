@@ -138,7 +138,7 @@ func filter(filepathIn, filepathOut string, threads int) {
 		for i := 0; i < threads; i++ {
 			if i == threads-1 {
 				go worker(start, start+sliceHeight, 0, width, immutableData, sliceOfChannels[i])
-				start = start + sliceHeight
+				start = start + sliceHeight + 1
 			} else {
 				go worker(start, height, 0, width, immutableData, sliceOfChannels[i])
 			}
